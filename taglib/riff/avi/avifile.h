@@ -63,6 +63,8 @@ namespace TagLib {
         File(FileName file, bool readProperties = true,
              Properties::ReadStyle propertiesStyle = Properties::Average);
 
+        File(IOStream* stream, bool readProperties = true,
+             Properties::ReadStyle propertiesStyle = Properties::Average);
         /*!
          * Destroys this instance of the File.
          */

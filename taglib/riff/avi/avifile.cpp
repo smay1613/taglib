@@ -61,6 +61,14 @@ RIFF::AVI::File::File(FileName file, bool readProperties, Properties::ReadStyle)
     read(readProperties);
 }
 
+RIFF::AVI::File::File(IOStream *stream, bool readProperties, Properties::ReadStyle) :
+  RIFF::File(stream, LittleEndian),
+  d(new FilePrivate())
+{
+  if(isOpen())
+    read(readProperties);
+}
+
 RIFF::AVI::File::~File()
 {
   delete d;
